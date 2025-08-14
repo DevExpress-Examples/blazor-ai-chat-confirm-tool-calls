@@ -78,7 +78,7 @@ public class MyToolCallFilter : IToolCallFilter {
 }
 ```
 
-### Confirm Tools Calls
+### Confirm Tool Calls
 
 The `FunctionInvokingChatClient` extends the default behavior that invokes tools. It intercepts AI tool calls, checks for confirmation logic, and only proceeds with user approval.
 
@@ -273,4 +273,5 @@ public static class CustomFunctionInvokingChatClientExtensions {
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
 
