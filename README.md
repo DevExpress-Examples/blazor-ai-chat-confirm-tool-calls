@@ -9,7 +9,7 @@ In AI-powered applications, tool or function calls can execute sensitive operati
 
 This example adds a **tool call confirmation** layer to the DevExpress Blazor AI Chat component. The chat intercepts AI-initiated tool calls, displays a confirmation dialog, and proceeds with user approval.
 
-> A screenshot
+![Confirm Tool Calls - Blazor AI Chat, DevExpress](devexpress-blazor-chat.png)
 
 ## Prerequisites
 
@@ -108,7 +108,7 @@ public class CustomFunctionInvokingChatClient : FunctionInvokingChatClient {
 
 This example displays the following dialog to confirm tool calls:
 
-> A screenshot
+![Confirmation Dialog - Blazor AI Chat, DevExpress](devexpress-blazor-chat.png)
 
 ```razor
 @if(_pendingTcs != null) {
