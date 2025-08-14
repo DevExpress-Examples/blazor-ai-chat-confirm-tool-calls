@@ -227,7 +227,7 @@ builder.Services.AddDevExpressAI();
 
 ### Fluent API Extension
 
-Fluent API allows you to confirm tool calls in a single line of configuration when building the chat client:
+Fluent API allows you to activate tool call confirmation with a single method call in your chat client configuration:
 
 ```csharp
 public static class CustomFunctionInvokingChatClientExtensions {
@@ -273,6 +273,7 @@ public static class CustomFunctionInvokingChatClientExtensions {
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
 
 
 
