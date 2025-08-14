@@ -80,7 +80,7 @@ public class MyToolCallFilter : IToolCallFilter {
 
 ### Confirm Tool Calls
 
-The `FunctionInvokingChatClient` extends the default behavior that invokes tools. It intercepts AI tool calls, checks for confirmation logic, and only proceeds with user approval.
+The `CustomFunctionInvokingChatClient` extends the default behavior that invokes tools. It intercepts AI tool calls, checks for confirmation logic, and only proceeds with user approval.
 
 ```csharp
 public class CustomFunctionInvokingChatClient : FunctionInvokingChatClient {
@@ -273,5 +273,6 @@ public static class CustomFunctionInvokingChatClientExtensions {
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
 
 
