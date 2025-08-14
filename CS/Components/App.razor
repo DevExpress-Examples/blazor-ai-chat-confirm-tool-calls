@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@using DxBlazorChatToolConfirmation.Services
+@inject IFileVersionProvider FileVersionProvider
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    @DxResourceManager.RegisterTheme(Themes.Fluent.Clone((x) => {
+        x.Mode = ThemeMode.Light;
+        x.AddFilePaths("css/theme-fluent.css");
+    }))
+    @DxResourceManager.RegisterScripts()
+    <link href=@AppendVersion("css/site.css") rel="stylesheet" />
+    <link href=@AppendVersion("DxBlazorChatToolConfirmation.styles.css") rel="stylesheet" />
+    <HeadOutlet />
+</head>
+<body class="dxbl-theme-fluent">
+    <Routes @rendermode="RenderMode.InteractiveServer" />
+    <script src="_framework/blazor.web.js"></script>
+</body>
+
+</html>
+
+@code{
+    private string AppendVersion(string path) => FileVersionProvider.AddFileVersionToPath("/", path);
+}

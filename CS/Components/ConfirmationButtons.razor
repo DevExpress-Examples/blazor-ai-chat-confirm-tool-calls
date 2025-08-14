@@ -1,0 +1,63 @@
+﻿@using DevExpress.AIIntegration.Blazor.Chat
+@using DxBlazorChatToolConfirmation.Services
+@using Microsoft.Extensions.AI;
+@implements IDisposable
+
+@if(_pendingTcs != null) {
+    <div>
+        @if(_pendingContext != null) {
+            <p><strong>Please confirm the tool call.</strong></p>
+            <blockquote>
+                <p><strong>Tool Called:</strong> @_pendingContext.Function.Name</p>
+                <p><strong>Description:</strong> @_pendingContext.Function.Description</p>
+            </blockquote>
+            <blockquote>
+                <strong>Arguments:</strong>
+                <ul>
+                    @foreach(var arg in _pendingContext.Arguments) {
+                        <li><strong>@arg.Key</strong>: @arg.Value</li>
+                    }
+                </ul>
+            </blockquote>
+        }
+
+        <DxButton Text="Confirm"
+                  RenderStyle="ButtonRenderStyle.Success"
+                  IconCssClass="oi oi-check"
+                  Click="() => OnDecisionMade(true)" />
+        <DxButton Text="Cancel"
+                  RenderStyle="ButtonRenderStyle.Secondary"
+                  IconCssClass="oi oi-x"
+                  Click="() => OnDecisionMade(false)" />
+    </div>
+}
+
+@code {
+    private FunctionInvocationContext? _pendingContext;
+    private TaskCompletionSource<bool>? _pendingTcs;
+    [Inject] IToolCallFilter? ToolCallFilter { get; set; }
+
+    protected override void OnInitialized() {
+        if(ToolCallFilter != null) {
+            ToolCallFilter.ToolCalled += OnFunctionInvoked;
+        }
+    }
+
+    public void Dispose() {
+        if(ToolCallFilter != null) {
+            ToolCallFilter.ToolCalled -= OnFunctionInvoked;
+        }
+    }
+
+    private void OnFunctionInvoked(FunctionInvocationContext context, TaskCompletionSource<bool> tcs) {
+        _pendingContext = context;
+        _pendingTcs = tcs;
+        StateHasChanged();
+    }
+
+    private void OnDecisionMade(bool decision) {
+        _pendingTcs!.SetResult(decision);
+        _pendingContext = null;
+        _pendingTcs = null;
+    }
+}

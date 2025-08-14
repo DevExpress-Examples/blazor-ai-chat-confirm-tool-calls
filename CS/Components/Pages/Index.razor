@@ -1,0 +1,14 @@
+﻿@page "/"
+@using DevExpress.AIIntegration.Blazor.Chat
+@using Microsoft.Extensions.AI;
+
+<PageTitle>DX AI Chat</PageTitle>
+
+<DxAIChat CssClass="main-content">
+    <MessageContentTemplate Context="context">
+        @context.Content
+        @if(context.Typing) {
+            <ConfirmationButtons />
+        }
+    </MessageContentTemplate>
+</DxAIChat>
