@@ -35,7 +35,7 @@ This example adds a **tool call confirmation** layer to the DevExpress Blazor AI
     export AZURE_OPENAI_ENDPOINT="https://your-instance.openai.azure.com/"
     export AZURE_OPENAI_API_KEY="your-api-key-here"
     ```
-2. Set the `deploymentName` in [Program.cs](cs/Program.cs) to your model's deployment name:
+2. Set the `deploymentName` in [Program.cs](./CS/Program.cs) to your model's deployment name:
 
     ```csharp
     string deploymentName = "your-model-name";
@@ -273,3 +273,4 @@ public static class CustomFunctionInvokingChatClientExtensions {
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
