@@ -253,6 +253,7 @@ public static class CustomFunctionInvokingChatClientExtensions {
 
 ## Documentation
 
+- [DevExpress Blazor AI Chat — Tool Call Confirmation (Blog Post)](https://int.devexpress.com/community/blogs/aspnet/archive/2025/08/13/devexpress-blazor-ai-chat-tool-call-confirmation.aspx)
 - [DevExpress AI-powered Extensions for Blazor](https://docs.devexpress.com/Blazor/405228/ai-powered-extensions)
 - [DevExpress Blazor AI Chat Control](https://docs.devexpress.com/Blazor/DevExpress.AIIntegration.Blazor.Chat.DxAIChat)
 - [DevExpress Blazor Form Layout](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxFormLayout)
@@ -273,6 +274,7 @@ public static class CustomFunctionInvokingChatClientExtensions {
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
 
 
 
