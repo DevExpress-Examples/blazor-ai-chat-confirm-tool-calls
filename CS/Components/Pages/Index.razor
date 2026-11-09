@@ -6,7 +6,7 @@
 
 <DxAIChat CssClass="main-content">
     <MessageContentTemplate Context="context">
-        @context.Content
+        @context.Text
         @if(context.Typing) {
             <ConfirmationButtons />
         }

@@ -14,8 +14,8 @@ This example adds a **tool call confirmation** layer to the DevExpress Blazor AI
 
 ## Prerequisites
 
-* .NET 8+ SDK
-* Visual Studio 2022, JetBrains Rider, or Visual Studio Code with C# extension
+* .NET 10+ SDK
+* Visual Studio 2022 (and later), JetBrains Rider, or Visual Studio Code with C# extension
 * Azure OpenAI Service access (API key and endpoint)
 
 ## Setup and Configuration
