@@ -8,7 +8,7 @@
 }
 
 .text-danger {
-    color: var(--dxds-color-surface-danger-default-rest);
+    color: var(--dxds-color-bg-danger);
 }
 
 .p-4 {
@@ -25,7 +25,7 @@
 }
 
 [data-fluent-darkmode] .dxbl-theme-fluent .welcome-card {
-    color: var(--dxds-primary-70);
+    color: var(--dxds-primary-80);
 }
 
 .icon {
